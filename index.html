@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VP Advisory</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header class="header">
+
+<nav>
+
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<span class="logo-text">VP Advisory</span>
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Strategic Financial Advisory</h1>
+
+<p>
+Helping businesses grow with financial expertise,
+compliance services and strategic advisory.
+</p>
+
+</div>
+
+</section>
+
+<section class="info-section">
+
+<h2>VP Advisory Services LLP</h2>
+
+<div class="info-grid">
+
+<div class="info-box">
+<h3>Business Advisory</h3>
+<p>Strategic financial consulting for growing businesses.</p>
+</div>
+
+<div class="info-box">
+<h3>Compliance Services</h3>
+<p>Ensuring statutory compliance and regulatory support.</p>
+</div>
+
+<div class="info-box">
+<h3>Financial Planning</h3>
+<p>Professional financial forecasting and analysis.</p>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 VP Advisory Services LLP</p>
+
+</footer>
+<script>
+
+const sections = document.querySelectorAll(
+'.info-section, .services-section, .team-grid, .contact-section'
+);
+
+const observer = new IntersectionObserver(entries => {
+
+entries.forEach(entry => {
+
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+
+});
+
+});
+
+sections.forEach(section=>{
+section.classList.add("section");
+observer.observe(section);
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,543 @@
+body{
+margin:0;
+background:#000;
+color:white;
+font-family:Inter,sans-serif;
+scroll-behavior:smooth;
+}
+
+/* GOLD ACCENT */
+
+:root{
+--gold:#C6A25A;
+}
+
+/* HEADER */
+
+.header{
+position:fixed;
+top:0;
+width:100%;
+z-index:1000;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 80px;
+}
+
+/* Update the logo container to align items correctly */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between the phoenix and the text */
+    font-family: "Playfair Display", serif;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: var(--gold);
+}
+
+/* Constrain the phoenix image size */
+.logo-img {
+    height: 75px; /* Adjust this value to change the logo height */
+    width: auto;  /* Maintains aspect ratio */
+    object-fit: contain;
+}
+
+nav ul{
+display:flex;
+gap:40px;
+list-style:none;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+font-size:14px;
+letter-spacing:1px;
+position:relative;
+}
+
+/* NAV HOVER */
+
+nav a::after{
+content:"";
+position:absolute;
+width:0;
+height:1px;
+background:var(--gold);
+bottom:-6px;
+left:0;
+transition:.4s;
+}
+
+nav a:hover::after{
+width:100%;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(
+to bottom,
+rgba(0,0,0,0.3),
+rgba(0,0,0,0.9)
+),
+url("business.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:40px;
+}
+
+.small-hero{
+height:60vh;
+}
+
+.hero-content{
+animation:fadeUp 1.5s ease;
+}
+
+.hero-content h1{
+font-family:"Playfair Display",serif;
+font-size:72px;
+font-weight:500;
+margin-bottom:20px;
+color:var(--gold);
+}
+
+.hero-content p{
+font-size:18px;
+max-width:650px;
+margin:auto;
+opacity:.9;
+}
+
+/* SECTION ANIMATION */
+
+.section{
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* INFO SECTION */
+
+.info-section{
+padding:140px 80px;
+text-align:center;
+}
+
+.info-section h2{
+font-family:"Playfair Display",serif;
+font-size:42px;
+margin-bottom:70px;
+color:var(--gold);
+}
+
+.info-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+max-width:1200px;
+margin:auto;
+}
+
+.info-box{
+border:1px solid #222;
+padding:50px;
+transition:.4s;
+background:#050505;
+}
+
+.info-box:hover{
+transform:translateY(-12px);
+border-color:var(--gold);
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:40px;
+padding:140px 80px;
+max-width:1200px;
+margin:auto;
+}
+
+.service-box{
+border:1px solid #222;
+padding:50px;
+transition:.4s;
+background:#050505;
+}
+
+.service-box:hover{
+transform:translateY(-12px);
+border-color:var(--gold);
+}
+
+footer{
+text-align:center;
+padding:50px;
+border-top:1px solid #111;
+margin-top:80px;
+}
+
+/* ADD NEW SERVICES CSS BELOW */
+
+/* PREMIUM SERVICES LIST */
+
+.services-section{
+padding:180px 20px;
+text-align:center;
+}
+
+.services-list{
+max-width:700px;
+margin:auto;
+}
+
+.service-item{
+padding:30px 0;
+border-bottom:1px solid #222;
+cursor:pointer;
+position:relative;
+transition:.4s;
+}
+
+/* TITLE */
+
+.service-title{
+font-family:"Playfair Display",serif;
+font-size:36px;
+color:var(--gold);
+margin:0;
+transition:.4s;
+}
+
+/* HOVER EFFECT */
+
+.service-item:hover .service-title{
+letter-spacing:3px;
+transform:translateX(10px);
+}
+
+/* GOLD LINE ANIMATION */
+
+.service-item::after{
+content:"";
+position:absolute;
+left:0;
+bottom:0;
+height:1px;
+width:0;
+background:var(--gold);
+transition:.4s;
+}
+
+.service-item:hover::after{
+width:100%;
+}
+
+/* DESCRIPTION */
+
+.service-description{
+max-height:0;
+overflow:hidden;
+opacity:0;
+transition:.5s;
+font-size:16px;
+margin-top:12px;
+line-height:1.6;
+color:#ccc;
+}
+
+.service-item.active .service-description{
+max-height:200px;
+opacity:1;
+}
+
+/* TEAM */
+
+.team-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:60px;
+padding:140px 80px;
+max-width:1200px;
+margin:auto;
+}
+
+.team-card{
+position:relative;
+overflow:hidden;
+cursor:pointer;
+transition:.4s;
+}
+
+.team-card:hover{
+transform:translateY(-12px);
+}
+
+.team-image img{
+width:100%;
+height:380px;
+object-fit:cover;
+transition:.6s;
+}
+
+.team-card:hover img{
+transform:scale(1.08);
+}
+
+/* OVERLAY */
+
+.team-overlay{
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+padding:30px;
+background:linear-gradient(
+to top,
+rgba(0,0,0,.95),
+rgba(0,0,0,0)
+);
+transform:translateY(70%);
+transition:.5s;
+}
+
+.team-card:hover .team-overlay{
+transform:translateY(0);
+}
+
+.team-overlay h3{
+font-family:"Playfair Display",serif;
+font-size:24px;
+margin:0;
+color:var(--gold);
+}
+
+.team-overlay p{
+font-size:14px;
+margin:5px 0;
+}
+
+.team-overlay span{
+font-size:13px;
+opacity:.8;
+display:block;
+margin-bottom:10px;
+}
+
+.team-overlay a{
+color:var(--gold);
+text-decoration:none;
+border-bottom:1px solid var(--gold);
+}
+.team-row{
+display:flex;
+align-items:center;
+gap:20px;
+padding:15px 0;
+border-bottom:1px solid #222;
+}
+
+.team-photo{
+width:2in;
+height:3in;
+object-fit:cover;
+border-radius:5px;
+}
+.team-row p{
+margin:0;
+font-size:17px;
+}
+.team-row{
+display:flex;
+align-items:flex-start;
+gap:50px;
+max-width:1100px;
+margin:80px auto;
+padding:0 100px;
+}
+
+.team-row.reverse{
+flex-direction:row-reverse;
+}
+
+.team-photo{
+width:200px;
+height:260px;
+object-fit:cover;
+border-radius:6px;
+}
+
+.team-content{
+font-family:"Playfair Display",serif;
+max-width:600px;
+}
+
+.gold-name{
+color:#e9e8e5;
+font-size:30px;
+margin:0;
+}
+
+.team-content{
+font-family:"Playfair Display",serif;
+max-width:800px; /* increase from 600px */
+}
+
+.experience-box{
+border:1px solid #222;
+padding:30px;
+background:#050505;
+line-height:1.7;
+width:100%;
+}
+
+/* CONTACT */
+
+/* CONTACT SECTION FIX */
+
+.contact-section{
+display:flex;
+justify-content:center;
+gap:60px;
+padding:140px 80px;
+flex-wrap:wrap;
+}
+
+.contact-box{
+border:1px solid #222;
+padding:50px;
+width:260px;
+text-align:center;
+transition:.4s;
+background:#050505;
+}
+
+.contact-box:hover{
+transform:translateY(-12px);
+border-color:var(--gold);
+}
+
+.contact-box h3{
+color:var(--gold);
+font-family:"Playfair Display",serif;
+}
+
+.contact-box a{
+color:white;
+text-decoration:none;
+display:block;
+margin-top:10px;
+font-size:15px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:60px;
+border-top:1px solid #111;
+margin-top:80px;
+font-size:14px;
+}
+
+/* ANIMATIONS */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}/* ================= MOBILE RESPONSIVE ================= */
+
+@media(max-width: 900px){
+
+/* NAV */
+
+nav{
+flex-direction:column;
+gap:15px;
+padding:20px;
+}
+
+/* HERO TEXT */
+
+.hero-content h1{
+font-size:40px;
+}
+
+.hero-content p{
+font-size:16px;
+}
+
+/* INFO + SERVICES GRID */
+
+.info-grid,
+.services-grid{
+grid-template-columns:1fr;
+padding:60px 20px;
+}
+
+/* TEAM ROW (STACK) */
+
+.team-row{
+flex-direction:column !important;
+padding:0 20px;
+text-align:center;
+}
+
+/* IMAGE CENTER */
+
+.team-photo{
+margin:auto;
+}
+
+/* TEXT */
+
+.team-content{
+max-width:100%;
+}
+
+/* EXPERIENCE BOX */
+
+.experience-box{
+text-align:left;
+}
+
+/* CONTACT */
+
+.contact-section{
+flex-direction:column;
+align-items:center;
+padding:60px 20px;
+}
+
+}
