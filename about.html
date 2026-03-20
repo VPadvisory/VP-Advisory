@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About | VP Advisory</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+/* ABOUT SECTIONS */
+
+.about-section{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+padding:140px 120px;
+opacity:0;
+transform:translateY(60px);
+transition:1s;
+}
+
+/* SHOW ANIMATION */
+
+.about-section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+/* REVERSE */
+
+.about-section.reverse{
+flex-direction:row-reverse;
+}
+
+/* TEXT */
+
+.about-text{
+max-width:600px;
+}
+
+.about-text h2{
+font-family:"Playfair Display",serif;
+font-size:42px;
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.about-text p{
+color:#aaa;
+line-height:1.8;
+}
+
+/* IMAGE */
+
+.about-image img{
+width:420px;
+height:auto;
+display:block;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.about-section{
+flex-direction:column !important;
+padding:80px 20px;
+text-align:center;
+}
+
+.about-image img{
+width:100%;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="header">
+
+<nav>
+
+<div class="logo">
+<img src="logo.png" class="logo-img">
+<span class="logo-text">VP Advisory</span>
+</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Us</a></li>
+<li><a href="services.html">Services</a></li>
+<li><a href="team.html">Team</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero small-hero">
+
+<div class="hero-content">
+
+<h1>About Us</h1>
+<p>Building trust through financial clarity and advisory excellence.</p>
+
+</div>
+
+</section>
+
+<!-- ASPECT 1 -->
+
+<section class="about-section">
+
+<div class="about-text">
+
+<h2>Our Vision</h2>
+
+<p>
+To build a globally recognized advisory powerhouse from India—setting new benchmarks in trust, precision, and strategic excellence.</p>
+
+</div>
+
+<div class="about-image">
+<img src="vision.jpg">
+</div>
+
+</section>
+
+<!-- ASPECT 2 -->
+
+<section class="about-section reverse">
+
+<div class="about-text">
+
+<h2>Our Mission </h2>
+
+<p>
+To deliver intelligent, reliable, and forward-looking advisory solutions that go beyond compliance—empowering businesses to grow, scale, and compete globally.</p>
+
+</div>
+
+<div class="about-image">
+<img src="mission.jpg">
+</div>
+
+</section>
+
+<!-- ASPECT 3 -->
+
+<section class="about-section">
+
+<div class="about-text">
+
+<h2> Our Expertise</h2>
+
+<p> At VP it's an one stop destination for an entity, from helping to incorporate to helping them achieve their mission, we provide services with professional expertise, our team consists of experienced specialists on various field and we ensure satisfactory services.
+</p>
+
+</div>
+
+<div class="about-image">
+<img src="expertise.jpg">
+</div>
+
+</section>
+
+<footer>
+
+<p>© 2026 VP Advisory Services LLP</p>
+
+</footer>
+
+<!-- SCROLL ANIMATION -->
+
+<script>
+
+const sections = document.querySelectorAll('.about-section');
+
+window.addEventListener('scroll', () => {
+sections.forEach(sec => {
+const top = sec.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+sec.classList.add('show');
+}
+});
+});
+
+</script>
+
+</body>
+
+</html>

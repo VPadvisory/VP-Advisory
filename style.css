@@ -34,7 +34,7 @@ padding:25px 80px;
 .logo {
     display: flex;
     align-items: center;
-    gap: 15px; /* Space between the phoenix and the text */
+    gap: 5px; /* Space between the phoenix and the text */
     font-family: "Playfair Display", serif;
     font-size: 22px;
     letter-spacing: 1px;
@@ -43,7 +43,7 @@ padding:25px 80px;
 
 /* Constrain the phoenix image size */
 .logo-img {
-    height: 75px; /* Adjust this value to change the logo height */
+    height: 90px; /* Adjust this value to change the logo height */
     width: auto;  /* Maintains aspect ratio */
     object-fit: contain;
 }
